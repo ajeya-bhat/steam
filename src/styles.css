@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image:
+  linear-gradient(to right,  rgba(0,168,255,0.5), rgba(185,0,255,0.5)),
+  url('bee.png');}

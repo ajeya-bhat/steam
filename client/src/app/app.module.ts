@@ -12,6 +12,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {UserService} from './user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactusComponent } from './contactus/contactus.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserhomeComponent
+    UserhomeComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

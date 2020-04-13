@@ -11,13 +11,21 @@ import {UserService} from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
+import { AllgamesComponent } from './allgames/allgames.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { CartComponent } from './cart/cart.component';
+import { DescriptionComponent } from './description/description.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactusComponent,
-    HomeComponent
+    HomeComponent,
+    AllgamesComponent,
+    AboutusComponent,
+    CartComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,

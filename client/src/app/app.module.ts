@@ -15,6 +15,7 @@ import { AllgamesComponent } from './allgames/allgames.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { CartComponent } from './cart/cart.component';
 import { DescriptionComponent } from './description/description.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DescriptionComponent } from './description/description.component';
     AllgamesComponent,
     AboutusComponent,
     CartComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

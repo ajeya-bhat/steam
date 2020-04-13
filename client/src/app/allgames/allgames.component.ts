@@ -12,4 +12,5 @@ export class AllgamesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   
 }

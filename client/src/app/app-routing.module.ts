@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ContactusComponent } from './contactus/contactus.component';
 import {HomeComponent} from './home/home.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [
   {path : "",component:HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:"contactus",component:ContactusComponent},
   {path : "allgames",component:AllgamesComponent},
   {path:"aboutus", component:AboutusComponent},
-  {path:"cart",component:CartComponent}
+  {path:"cart",component:CartComponent},
+  {path:"statistics",component:StatisticsComponent}
    
 ];
 

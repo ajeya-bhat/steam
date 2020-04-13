@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactusComponent } from './contactus/contactus.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactusComponent
+    ContactusComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

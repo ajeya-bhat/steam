@@ -1,9 +1,11 @@
 
-
-    <table>
-    <tr *ngFor ="let game of games">
-        <td><img src={{game.header_image}} alt="..." /></td>
-        <td>{{game.name}}</td>
-        <td>{{game.name}}</td>
-
-    </table>
+<a><div *ngFor ="let game of games" class="caru card">
+    <div class="card-header">
+    <div class="name">{{game.name}}</div>
+    <div class="name">{{game.price}}</div>
+    </div>
+    <div class="card-content p-2">
+        <img src={{game.header_image}} style="width: 100%">
+    </div>
+    
+</div></a>

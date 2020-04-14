@@ -1,0 +1,16 @@
+.atlas{
+    width: 1200px;
+    height: 900px;
+    background-color: rgba(139, 131, 131, 0.5);
+    margin-left: 23%;
+    border-radius: 20px;
+}
+.ss{
+    margin-left: 35%;
+    font-family: 'Trebuchet MS';
+    color:white;
+}
+.opera{
+max-width: 50%;
+margin-left: 25%;
+}

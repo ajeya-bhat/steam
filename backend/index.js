@@ -1,9 +1,12 @@
 const express=require('express');
 const bodyParser=require('body-parser'); 
+const cors=require('cors');
 
 const { mongoose }=require("./db.js");
 var cartController= require("./controllers/cartController");
 
 var app=express();
+app.use(cors({origin:"*"}));
 app.use(bodyParser.json());
 app.listen(3000,()=> console.log("Server start")); 
+app.use('/cart',cartController);

@@ -15,6 +15,15 @@ router.post('/',(req,res)=>{
         else{console.log("ERR")}
     });
 });
+
+router.get('/',(req,res)=>{
+    Cart.find((err,doc)=>{
+        if(!err) {res.send(doc);}
+
+        else{console.log("ERR")}
+    });
+});
+
 router.delete('/:id',(req,res)=>{
     if(!ObjectId.isValid(req.param.id))
         return res.status(400).send(`NO RECORD : ${req.params.id}`);

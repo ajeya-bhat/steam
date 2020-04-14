@@ -1,5 +1,5 @@
 
-<button class="secondary outline"><div *ngFor ="let game of games" class="caru card rounded drop-shadow">
+<div (click)="onSelect(game)" *ngFor ="let game of games" style="cursor:pointer" class="caru card rounded drop-shadow">
     <div class="card-header">
     <div class="name">{{game.name}}</div>
     <div class="name">{{game.price}}</div>
@@ -7,5 +7,5 @@
     <div class="card-content p-2">
         <img src={{game.header_image}} style="width: 100%">
     </div>
-    
-</div></button>
+</div>
+

@@ -1,3 +1,4 @@
+import { DescriptionComponent } from './description/description.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path : "allgames",component:AllgamesComponent},
   {path:"aboutus", component:AboutusComponent},
   {path:"cart",component:CartComponent},
+  {path:"allgames/:appid",component:DescriptionComponent},
   {path:"statistics",component:StatisticsComponent}
 ];
 

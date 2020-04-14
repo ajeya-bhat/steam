@@ -1,0 +1,9 @@
+.asker{
+    max-width: 90%;
+    max-height: 100px;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 20px;
+    background-color: rgba(139, 131, 131, 0.75);
+
+}

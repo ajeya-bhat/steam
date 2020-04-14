@@ -1,8 +1,11 @@
-<table>
-    <tr *ngFor="let cart of cartService.carts">
-        <td><img src={{cart.url}} alt="..." style="width: 10px;height: 10px;"/></td>
-        <td>{{cart.name}}</td>
-        <td>{{cart.price}}</td>
-        <td><button (click)="delc(cart._id)">Del</button></td>
-    </tr>
-</table>
+
+<div *ngFor="let cart of cartService.carts">
+    
+<nav class=" asker navbar navbar-light ">
+ 
+    <img src={{cart.url}} alt="..." style="max-height: 80px;"/><h1>{{cart.name}}</h1>
+    
+    <h3>$ {{cart.price}}</h3>
+    <button class="button large  rounded alert outline drop-shadow" (click)="delc(cart._id)">Delete</button>
+  </nav>
+  </div>

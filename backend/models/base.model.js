@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-var steamschema = new mongoose.Schema({
+var Main= mongoose.model("Main",{
     appid:{
         type: String,
     },
@@ -66,4 +66,4 @@ var steamschema = new mongoose.Schema({
 
 });
 
-mongoose.model("main",steamschema);
+module.exports={Main}; 

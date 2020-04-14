@@ -4,7 +4,7 @@ const express =require("express");
 const app = express();
 const expressHandlebars = require("express-handlebars");
 const bodyparser = require("body-parser");
-const main = mongoose.model("main");
+const { main } = mongoose.model("main");
 
 
  app.use(bodyparser.urlencoded({extended:true}));

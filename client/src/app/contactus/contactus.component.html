@@ -1,6 +1,6 @@
 <div class="atlas container">
     <br><br>
-    <h1 class="ss">Happy to help you !</h1>
+    <h1 class="sss">Happy to help you !</h1>
     <br><br><br><br>
     <form #contactusForm="ngForm" class="opera" (ngSubmit)="onSubmit(contactusForm)" >
         <!--<input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="contactusService.selectedContact._id">
@@ -18,12 +18,12 @@
         </div>
         <div class="form-group">
             <label class="ss">Request</label>
-            <input type="text" name="request" #name="ngModel" [(ngModel)]="selectedContact.request" placeholder="Enter request" height="30px"/>
+            <textarea data-role="textarea" data-auto-size="true" data-max-height="200" name="request" #name="ngModel" [(ngModel)]="selectedContact.request" placeholder="Enter request"></textarea>
         </div>
         
-        <div class="form-group">
-            <button class="button success">Submit data</button>
-            
+        <div class=" ">
+            <button class="button large  rounded success outline drop-shadow">Submit data</button>
+               
         </div>
     </form> 
     <div id="dis"></div>

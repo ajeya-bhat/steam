@@ -12,7 +12,12 @@ export class ContactusService {
   readonly baseUrl = "http://localhost:3000/cart/contactus";
   constructor(private http:HttpClient) { }
 
-  postcontactus(cont : Contactus){
+  postcontactus(cont : any){
+    console.log(cont);
+    var fd = new FormData();
+    fd.append("name", cont.name);
+    fd.append("email", cont.email);
+    fd.append("request", cont.request);
     return this.http.post(this.baseUrl,cont);
   }
 }

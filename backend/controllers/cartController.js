@@ -45,8 +45,7 @@ router.get('/contactus',(req,res)=>{
 });
 
 router.delete('/carts/:id',(req,res)=>{
-    if(!ObjectId.isValid(req.param.id))
-        return res.status(400).send(`NO RECORD : ${req.params.id}`);
+   
     Cart.findByIdAndRemove(req.params.id,(err,doc)=>{
         if(!err){res.send(doc);}
         else{console.log("NO DEL");}

@@ -2,23 +2,21 @@
     <br><br>
     <h1 class="ss">Happy to help you !</h1>
     <br><br><br><br>
-    <form #contactusForm="ngForm" class="opera" (ngSubmit)="onSubmit(contactusForm)" >
+    <form class="opera" (ngSubmit)="onSubmit()" >
         <!--<input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="contactusService.selectedContact._id">
         -->
         <div class="form-group" >
             <label  class="ss">Name</label>
-            <input type="text" name="name" #name="ngModel" [(ngModel)]="selectedContact.name" placeholder="Enter name"/>
-        
+            <input type="text" name="name"  [(ngModel)]="selectedContact.name" placeholder="Enter name"/>
         </div>
-
         <div class="form-group" >
             <label  class="ss">Email address</label>
-            <input type="text" name="email" #name="ngModel" [(ngModel)]="selectedContact.email" placeholder="Enter email"/>
+            <input type="text" name="email"  [(ngModel)]="selectedContact.email" placeholder="Enter email"/>
         
         </div>
         <div class="form-group">
             <label class="ss">Request</label>
-            <input type="text" name="request" #name="ngModel" [(ngModel)]="selectedContact.request" placeholder="Enter request" height="30px"/>
+            <input type="text" name="request" [(ngModel)]="selectedContact.request" placeholder="Enter request" height="30px"/>
         </div>
         
         <div class="form-group">

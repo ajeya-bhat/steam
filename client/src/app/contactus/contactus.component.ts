@@ -17,10 +17,11 @@ export class ContactusComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  public selectedContact :Contactus;
+  public selectedContact :any={};
 
-  onSubmit(form :NgForm){
-    this.contactusService.postcontactus(form.value).subscribe((res)=>{
+  onSubmit(){
+    
+    this.contactusService.postcontactus(this.selectedContact).subscribe((res)=>{
       document.getElementById("dis").textContent="Submitted";
     });
   }

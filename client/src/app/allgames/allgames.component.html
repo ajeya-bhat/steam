@@ -1,5 +1,5 @@
 
-<a><div *ngFor ="let game of games" class="caru card">
+<button class="secondary outline"><div *ngFor ="let game of games" class="caru card rounded drop-shadow">
     <div class="card-header">
     <div class="name">{{game.name}}</div>
     <div class="name">{{game.price}}</div>
@@ -8,4 +8,4 @@
         <img src={{game.header_image}} style="width: 100%">
     </div>
     
-</div></a>
+</div></button>

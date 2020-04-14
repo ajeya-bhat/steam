@@ -9,7 +9,7 @@ import { Cart } from './cart.model';
 })
 export class CartService {
   carts : Cart[];
-  readonly baseUrl = "http://localhost:3000/cart/carts";
+  readonly baseUrl = "http://localhost:3000/cart/carts/";
   constructor(private http:HttpClient) { }
 
   getcart(){

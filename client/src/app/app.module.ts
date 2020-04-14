@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, NgForm } from '@angular/forms';
 import {UserService} from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactusComponent } from './contactus/contactus.component';

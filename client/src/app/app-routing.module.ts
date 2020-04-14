@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AllgamesComponent } from './allgames/allgames.component';
@@ -16,11 +17,10 @@ const routes: Routes = [
   {path:"aboutus", component:AboutusComponent},
   {path:"cart",component:CartComponent},
   {path:"statistics",component:StatisticsComponent}
-   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),FormsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

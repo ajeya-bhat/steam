@@ -13,7 +13,6 @@ export class CartService {
   constructor(private http:HttpClient) { }
 
   postcart(cont : any){
-    console.log(cont);
     return this.http.put(this.baseUrl,cont);
   }
   getcart(){
@@ -22,5 +21,8 @@ export class CartService {
 
   delcart(_id:string){
     return this.http.delete(this.baseUrl+`${_id}`);
+  }
+  dcart(){
+    return this.http.delete(this.baseUrl);
   }
 }

@@ -53,6 +53,12 @@ router.delete('/carts/:id',(req,res)=>{
         else{console.log("NO DEL");}
     });
 });
+router.delete('/carts',(req,res)=>{
+   
+    Cart.deleteMany({}, (err) => {
+        if(err){console.log("NO DEL");}
+    });
+});
 router.get('/listall',(req,res)=>{
     Main.find((err,doc)=>{
         if(!err) {console.log("balls");res.send(doc);}

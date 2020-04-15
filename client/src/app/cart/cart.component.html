@@ -10,5 +10,12 @@
   </nav>
   </div>
   <div id="dis"></div>
-
-  <button (click)="Buyer()">Buy</button>
+  <div *ngIf="cartService.carts.length>0;then thenblk;else elseblk"></div>
+  
+  <ng-template #thenblk>
+    <button (click)="Buyer()">Buy</button>
+  </ng-template>
+  <ng-template #elseblk>
+    Cart is empty.
+  </ng-template>
+  

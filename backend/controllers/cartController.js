@@ -55,8 +55,11 @@ router.delete('/carts/:id',(req,res)=>{
 });
 router.delete('/carts',(req,res)=>{
    
-    Cart.deleteMany({}, (err) => {
+    Cart.deleteMany({}, (err,doc) => {
         if(err){console.log("NO DEL");}
+        else{
+            res.send(doc);
+        }
     });
 });
 router.get('/listall',(req,res)=>{

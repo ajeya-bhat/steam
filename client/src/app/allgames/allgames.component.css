@@ -1,3 +1,12 @@
 .caru{
     max-width: 300px;
+    float: left;
+    height: 250px;
+    margin-left: 3.2%;
+    margin-top: 3%;
+    background-image:linear-gradient(to bottom,  rgba(0,168,255,0.5), rgba(185,0,255,0.5)),url('../../gee.jpg');
+    background-size: cover;
+}
+.herlo{
+    font-family: "Stencil";
 }

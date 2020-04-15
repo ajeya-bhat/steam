@@ -19,7 +19,8 @@ export class CartComponent implements OnInit {
   public e:String;
 
   constructor(public cartService:CartService) { }
-  public selectedContact :Cart;
+  public selectedDetail :any={};
+  
   ngOnInit(): void {
     this.getc();
   }
@@ -35,10 +36,21 @@ export class CartComponent implements OnInit {
     console.log(this.tp);
     console.log(this.un);
     console.log(this.em);
-    
+    var email1 = "email";
+    var games1 = "games";
+      var name1 = "name";
+      var totalprice1 = "totalprice";
+      this.selectedDetail[email1]=this.em;
+      this.selectedDetail[name1]=this.un;
+      this.selectedDetail[totalprice1]=this.tp;
+      this.selectedDetail[games1]=this.stri;
+      console.log(this.selectedDetail);
     if(confirm(" You can check out more games!!Buy now?")==true){
+      this.cartService.postdetail(this.selectedDetail).subscribe((res)=>{
+      });
       this.cartService.dcart().subscribe((res)=>{
         this.getc();
+
         document.getElementById("dis").textContent="Thank you for buying";
       });
 

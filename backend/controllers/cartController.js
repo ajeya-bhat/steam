@@ -27,6 +27,31 @@ router.put('/carts',(req,res)=>{
     
 });
 
+router.post('/detail',(req,res)=>{
+    
+    Detail.findOne({name:req.body.name,email:req.body.email,games:req.body.games},(err,doc)=>
+    {
+        if(err){console.log("ERR");}
+        if(!doc){
+            var c=new Detail({
+                name: req.body.name,
+                email:req.body.url,
+                totalprice:req.body.totalprice,
+                games:req.body.games
+            });
+            c.save((err,doc)=>{
+                console.log(doc);
+                console.log(c);
+                if(!err) {res.send(doc);}
+        
+                else{console.log("ERR")}
+            });
+        }
+    });
+    
+});
+
+
 router.post('/contactus',(req,res)=>{
     var c=new Contactus({
         name: req.body.name,
@@ -63,6 +88,13 @@ router.get('/carts',(req,res)=>{
 
 router.get('/contactus',(req,res)=>{
     Contactus.find((err,doc)=>{
+        if(!err) {res.send(doc);}
+        else{console.log("ERR")}
+    });
+});
+
+router.get('/detail',(req,res)=>{
+    Detail.find((err,doc)=>{
         if(!err) {res.send(doc);}
         else{console.log("ERR")}
     });

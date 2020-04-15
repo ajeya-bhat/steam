@@ -10,13 +10,15 @@
   </nav>
   </div>
   <div id="dis"></div>
-  <div  *ngIf="cartService.carts.length>0;then thenblk;else elseblk"></div>
-  <div >
-  <ng-template #thenblk >
-    <p class="angkore ">Total: $ {{tp}}</p>
-    <button class=" asad button large rounded success outline drop-shadow" (click)="Buyer()">Checkout</button>
-  </ng-template></div>
-  <ng-template #elseblk >
-    <p class="pres">Cart is empty.</p>
+  <div *ngIf="cartService.carts.length>0;then thenblk;else elseblk"></div>
+  
+  <ng-template #thenblk>
+    {{tp}}
+    Name : <input type="text" id="un" [(ngModel)]="un">
+    Email: <input type="text" id="em" [(ngModel)]="em">
+    <button (click)="Buyer()">Buy</button>
+  </ng-template>
+  <ng-template #elseblk>
+    Cart is empty.
   </ng-template>
   

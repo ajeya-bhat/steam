@@ -1,0 +1,21 @@
+.clover{
+    width: 90%;
+    height: 800px;
+    background-size: cover;
+    color: white;
+    border-radius: 20px;
+}
+.title{
+    text-align: center;
+    font-family: "Moon 2.0";
+    font-size: 70px;
+}
+.heads{
+    margin-left: 25%;
+    width: 50%;
+}
+.dedc{
+    text-align: center;
+    font-family: "Monotype Corsiva";
+    font-size: 30px;
+}

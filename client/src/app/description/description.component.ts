@@ -16,6 +16,13 @@ export class DescriptionComponent implements OnInit {
   public sender;
   public name;
   public price;
+  public dev;
+  public desc;
+  public release;
+  public pos_rate;
+  public neg_rate;
+  public background;
+  public ans;
   constructor(private route: ActivatedRoute, public cartService:CartService) { }
 
   ngOnInit(): void {
@@ -3022,6 +3029,27 @@ export class DescriptionComponent implements OnInit {
           this.name=name1;
           let price1=this.games[i].price;
           this.price=price1;
+          let dev1=this.games[i].developer;
+          this.dev=dev1;
+          let desc1=this.games[i].short_description;
+          this.desc=desc1;
+          let pos_rate1=this.games[i].positive_ratings;
+          this.pos_rate=pos_rate1;
+          let neg_rate1=this.games[i].negative_ratings;
+          this.neg_rate=neg_rate1;
+          let background1=this.games[i].background;
+          this.background=background1;
+          let a = +pos_rate1;
+          let b = +neg_rate1;
+          let c =a+b;
+          let d= a/c;
+          let e = d*100;
+          let ans1 = e.toString();
+          console.log(e);
+          this.ans =e;
+
+
+          
         }
       }
       var url1 = "url";

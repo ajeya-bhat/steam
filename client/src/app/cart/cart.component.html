@@ -13,7 +13,7 @@
   <div *ngIf="cartService.carts.length>0;then thenblk;else elseblk"></div>
   
   <ng-template #thenblk>
-    
+    {{tp}}
     <button (click)="Buyer()">Buy</button>
   </ng-template>
   <ng-template #elseblk>

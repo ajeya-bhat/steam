@@ -11,6 +11,15 @@ export class AllgamesComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    
+  }
+  public displayn:boolean=false;
+  onloadmore(){
+    document.getElementById("load").style.height="0px";
+    document.getElementById("load").style.width="0px";
+    document.getElementById("load").textContent="";
+    document.getElementById("load").style.visibility="hidden";
+    this.displayn=true;
   }
 
   onSelect(game){
@@ -447,17 +456,7 @@ games:any[]=[
   owners: `0-20000`,price: `0.0`,
   header_image: `https://steamcdn-a.akamaihd.net/steam/apps/990250/header.jpg?t=1545916986`,background: `https://steamcdn-a.akamaihd.net/steam/apps/990250/page_bg_generated_v6b.jpg?t=1545916986`,
   short_description: `"There is no one in the world who could return from the Dark Side inviolate… “Darkness and Flame. The Dark Side” is an adventure game in the genre of Hidden Objects`},
-  {steam_id: `13162`,appid: `587620`,name: `OKAMI HD / 大神 絶景版`,
-  releasedate: `2017-12-12`,english: `1`,
-  developer: `"CAPCOM Co.`,publisher: ` Ltd."`,
-  platforms: `"CAPCOM Co.`,required_age: ` Ltd."`,
-  categories: `windows`,genres: `0`,
-  steam_spytags: `Single-player$Steam Achievements$Full controller support$Steam Trading Cards$Steam Cloud`,achievements: `Adventure`,
-  positive_ratings: `Adventure$Great Soundtrack$Mythology`,negative_ratings: `51`,
-  average_playtime: `2854`,median_playtime: `236`,
-  owners: `1737`,price: `1884`,
-  header_image: `100000-200000`,background: `15.99`,
-  short_description: `https://steamcdn-a.akamaihd.net/steam/apps/587620/header.jpg?t=1550022287`},
+  
   {steam_id: `25452`,appid: `972290`,name: `FlyingMetalSuit`,
   releasedate: `2018-11-20`,english: `1`,
   developer: `Wirtuel`,publisher: `Wirtuel`,
@@ -1151,17 +1150,7 @@ games:any[]=[
   owners: `0-20000`,price: `6.99`,
   header_image: `https://steamcdn-a.akamaihd.net/steam/apps/552550/header.jpg?t=1481644865`,background: `https://steamcdn-a.akamaihd.net/steam/apps/552550/page_bg_generated_v6b.jpg?t=1481644865`,
   short_description: `"Be part of the action! SPACE RIFT is the first part of a breathtaking action space adventure with a captivating story!Originally developed for virtual reality`},
-  {steam_id: `12130`,appid: `559170`,name: `"Ready`,
-  releasedate: ` Aim`,english: ` Splat!"`,
-  developer: `2017-01-12`,publisher: `1`,
-  platforms: `Blue Volcano Studio`,required_age: `Blue Volcano Studio`,
-  categories: `windows`,genres: `0`,
-  steam_spytags: `Single-player`,achievements: `Action$Casual$Indie`,
-  positive_ratings: `Action$Indie$Casual`,negative_ratings: `0`,
-  average_playtime: `4`,median_playtime: `2`,
-  owners: `0`,price: `0`,
-  header_image: `0-20000`,background: `3.99`,
-  short_description: `https://steamcdn-a.akamaihd.net/steam/apps/559170/header.jpg?t=1507858869`},
+  
   {steam_id: `322`,appid: `12710`,name: `Overlord™: Raising Hell`,
   releasedate: `2009-11-12`,english: `1`,
   developer: `Triumph Studios$Virtual Programming`,publisher: `Codemasters`,
@@ -2890,5 +2879,8 @@ games:any[]=[
   header_image: `https://steamcdn-a.akamaihd.net/steam/apps/372830/header.jpg?t=1465347100`,background: `https://steamcdn-a.akamaihd.net/steam/apps/372830/page_bg_generated_v6b.jpg?t=1465347100`,
   short_description: `"Designed to resemble a game for a classic portable game system with simple game play`}
   ]; 
+
+  
+
 }
 

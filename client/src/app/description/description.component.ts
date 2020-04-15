@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DescriptionComponent implements OnInit {
   public appid;
   public url;
-  
+  public price;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -51,6 +51,8 @@ export class DescriptionComponent implements OnInit {
       for(let i=0;i<this.games.length;i++){
         if(this.games[i].appid==this.appid){
           let url1=this.games[i].header_image;
+          let price=this.games[i].price;
+          this.price=price;
           this.url=url1;
         }
       }

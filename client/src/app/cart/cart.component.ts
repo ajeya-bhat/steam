@@ -63,6 +63,8 @@ export class CartComponent implements OnInit {
   }
 
   getc(){
+    this.tp=0;
+      this.stri="";
     this.cartService.getcart().subscribe((res)=>{
       this.cartService.carts=res as Cart[];
       for(let i=0;i<this.cartService.carts.length-1;i++){
@@ -81,8 +83,6 @@ export class CartComponent implements OnInit {
   delc(_id:string){
     if(confirm("Delete?")==true){
     this.cartService.delcart(_id).subscribe((res)=>{
-      this.tp=0;
-      this.stri="";
       this.getc();
     });}
     

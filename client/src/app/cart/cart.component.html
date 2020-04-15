@@ -14,6 +14,8 @@
   
   <ng-template #thenblk>
     {{tp}}
+    Name : <input type="text" id="un" [(ngModel)]="un">
+    Email: <input type="text" id="em" [(ngModel)]="em">
     <button (click)="Buyer()">Buy</button>
   </ng-template>
   <ng-template #elseblk>

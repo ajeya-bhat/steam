@@ -1,6 +1,7 @@
 import { CartService } from './../shared/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../shared/cart.model';
+import { interval } from 'rxjs';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { Cart } from '../shared/cart.model';
   providers: [CartService]
 })
 export class CartComponent implements OnInit {
-
+  public tp:number=0;
+  public stri:String="";
   constructor(public cartService:CartService) { }
   public selectedContact :Cart;
   ngOnInit(): void {
@@ -30,11 +32,17 @@ export class CartComponent implements OnInit {
   getc(){
     this.cartService.getcart().subscribe((res)=>{
       this.cartService.carts=res as Cart[];
+      for(let i=0;i<this.cartService.carts.length;i++){
+        this.tp+=this.cartService.carts[i].price;
+        this.stri
+    }
     });
+  
   }
   delc(_id:string){
     if(confirm("Delete?")==true){
     this.cartService.delcart(_id).subscribe((res)=>{
+      this.tp=0;
       this.getc();
     });}
     

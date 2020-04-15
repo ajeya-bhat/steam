@@ -46,15 +46,13 @@ export class CartComponent implements OnInit {
     var games1 = "games";
       var name1 = "name";
       var totalprice1 = "totalprice";
-      this.selectedDetail[email1]=this.em;
       this.selectedDetail[name1]=this.un;
-      this.selectedDetail[totalprice1]=this.tp;
+      this.selectedDetail[email1]=this.em;
       this.selectedDetail[games1]=this.stri;
-      console.log(this.selectedDetail);
+      this.selectedDetail[totalprice1]=this.tp;
     if(confirm(" You can check out more games!!Buy now?")==true){
       this.cartService.postdetail(this.selectedDetail).subscribe((res)=>{
         console.log(res);
-        console.log(this.selectedDetail);
       });
       this.cartService.dcart().subscribe((res)=>{
         this.getc();

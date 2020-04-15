@@ -10,14 +10,13 @@ router.put('/carts',(req,res)=>{
     {
         if(err){console.log("ERR");}
         if(!doc){
+            
             var c=new Cart({
                 name: req.body.name,
                 url:req.body.url,
                 price:req.body.price
             });
             c.save((err,doc)=>{
-                console.log(doc);
-                console.log(c);
                 if(!err) {res.send(doc);}
         
                 else{console.log("ERR")}
@@ -32,15 +31,16 @@ router.post('/detail',(req,res)=>{
     {
         if(err){console.log("ERR");}
         if(!doc){
+            let co=req.body;
+            sendmail1(co);
             var c=new Detail({
                 name: req.body.name,
-                email:req.body.url,
+                email:req.body.email,
                 totalprice:req.body.totalprice,
                 games:req.body.games
             });
             c.save((err,doc)=>{
                 console.log(doc);
-                console.log(c);
                 if(!err) {res.send(doc);}
         
                 else{console.log("ERR")}
@@ -88,21 +88,7 @@ async function sendmail(user){
     let info = await transporter.sendMail(mailopt);
 }
 
-router.post('/detail',(req,res)=>{
-    let co=req.body;
-    sendmail1(co);
-    var c=new Contactus({
-        name: req.body.name,
-        email:req.body.email,
-        games:req.body.games,
-        totalprice:req.body.totalprice
-    });
-    c.save((err,doc)=>{
-        if(!err) {res.send(doc);}
 
-        else{console.log("ERR")}
-    });
-});
 
 
 async function sendmail1(user){

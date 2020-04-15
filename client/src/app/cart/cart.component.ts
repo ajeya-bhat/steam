@@ -23,6 +23,12 @@ export class CartComponent implements OnInit {
   
   ngOnInit(): void {
     this.getc();
+    interval(5000).subscribe(
+      x => {
+        console.log("hi");
+        this.getc();
+      });
+    
   }
 
   geti(){
@@ -44,7 +50,6 @@ export class CartComponent implements OnInit {
       this.selectedDetail[name1]=this.un;
       this.selectedDetail[totalprice1]=this.tp;
       this.selectedDetail[games1]=this.stri;
-      console.log(this.selectedDetail);
     if(confirm(" You can check out more games!!Buy now?")==true){
       this.cartService.postdetail(this.selectedDetail).subscribe((res)=>{
       });
@@ -84,3 +89,4 @@ export class CartComponent implements OnInit {
   }
 
 }
+

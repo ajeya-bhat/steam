@@ -1,11 +1,13 @@
 <div class="darku container-fluid">
-<div (click)="onSelect(game)" *ngFor ="let game of games" style="cursor:pointer" class="caru card rounded drop-shadow">
+<div  *ngFor ="let game of games; let i = index" >
+    <div *ngIf="i<10" (click)="onSelect(game)" style="cursor:pointer" class="caru card rounded drop-shadow">
     <div class="card-header">
     <div class="herlo name">{{game.name}}</div>
     <div class="name">$ {{game.price}}</div>
     </div>
     <div class="card-content p-2">
         <img src={{game.header_image}} style="width: 100%">
+    </div>
     </div>
 </div>
 </div>

@@ -23,8 +23,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     AppComponent,
     ContactusComponent,
     HomeComponent,
-    AllgamesComponent,
     AboutusComponent,
+    AllgamesComponent,
     CartComponent,
     DescriptionComponent,
     StatisticsComponent

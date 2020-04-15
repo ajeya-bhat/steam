@@ -4,6 +4,32 @@
     margin-left: 5%;
     margin-top: 2%;
     border-radius: 20px;
-    background-color: rgba(139, 131, 131, 0.75);
+    background-color: rgba(139, 131, 131, 0.75  );
 
+}
+.asad{
+    float: left;
+    margin-left: 2%;
+    margin-top: 4.5%;
+}
+.angkore{
+    float: left;
+    margin-left: 75%;
+    margin-top: 5%;
+    color: greenyellow;
+    font-size: 30px;
+    font-family: monospace;
+}
+.whit{
+    color: wheat;
+}
+.doj{
+    color: aqua;
+}
+.pres{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: wheat;
+    text-align: center;
+    margin-top: 20%;
 }

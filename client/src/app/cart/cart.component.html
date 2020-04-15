@@ -3,20 +3,20 @@
     
 <nav class=" asker navbar navbar-light ">
  
-    <img src={{cart.url}} alt="..." style="max-height: 80px;"/><h1>{{cart.name}}</h1>
+    <img src={{cart.url}} alt="..." style="max-height: 80px;"/><h1 class="whit">{{cart.name}}</h1>
     
-    <h3>$ {{cart.price}}</h3>
+    <h3 class="doj">$ {{cart.price}}</h3>
     <button class="button large  rounded alert outline drop-shadow" (click)="delc(cart._id)">Delete</button>
   </nav>
   </div>
   <div id="dis"></div>
-  <div *ngIf="cartService.carts.length>0;then thenblk;else elseblk"></div>
-  
-  <ng-template #thenblk>
-    {{tp}}
-    <button (click)="Buyer()">Buy</button>
-  </ng-template>
-  <ng-template #elseblk>
-    Cart is empty.
+  <div  *ngIf="cartService.carts.length>0;then thenblk;else elseblk"></div>
+  <div >
+  <ng-template #thenblk >
+    <p class="angkore ">Total: $ {{tp}}</p>
+    <button class=" asad button large rounded success outline drop-shadow" (click)="Buyer()">Checkout</button>
+  </ng-template></div>
+  <ng-template #elseblk >
+    <p class="pres">Cart is empty.</p>
   </ng-template>
   

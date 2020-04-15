@@ -9,9 +9,13 @@ import { Cart } from './cart.model';
 })
 export class CartService {
   carts : Cart[];
-  readonly baseUrl = "http://localhost:3000/cart/carts/";
+  readonly baseUrl = "http://localhost:3000/cart/carts";
   constructor(private http:HttpClient) { }
 
+  postcart(cont : any){
+    console.log(cont);
+    return this.http.put(this.baseUrl,cont);
+  }
   getcart(){
     return this.http.get(this.baseUrl);
   }

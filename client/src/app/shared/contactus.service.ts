@@ -14,10 +14,6 @@ export class ContactusService {
 
   postcontactus(cont : any){
     console.log(cont);
-    var fd = new FormData();
-    fd.append("name", cont.name);
-    fd.append("email", cont.email);
-    fd.append("request", cont.request);
     return this.http.post(this.baseUrl,cont);
   }
 }

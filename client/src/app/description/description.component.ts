@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { stringify } from 'querystring';
+import { CartService } from './../shared/cart.service';
+import { Component, OnInit } from '@angular/core';
+import { Cart } from '../shared/cart.model';
 
 @Component({
   selector: 'app-description',
   templateUrl: './description.component.html',
-  styleUrls: ['./description.component.css']
+  styleUrls: ['./description.component.css'],
+  providers: [CartService]
 })
 export class DescriptionComponent implements OnInit {
   public appid;
   public url;
-  
-  constructor(private route: ActivatedRoute) { }
+  public sender;
+  public name;
+  public price;
+  constructor(private route: ActivatedRoute, public cartService:CartService) { }
 
   ngOnInit(): void {
     let id=parseInt(this.route.snapshot.paramMap.get('appid'));
@@ -3011,16 +3016,26 @@ export class DescriptionComponent implements OnInit {
         if(this.games[i].appid==this.appid){
           let url1=this.games[i].header_image;
           this.url=url1;
+          let name1=this.games[i].name;
+          this.name=name1;
+          let price1=this.games[i].price;
+          this.price=price1;
         }
       }
       var url1 = "url";
+      var name1 = "name";
+      var price1 = "price";
       this.selectedCart[url1]=this.url;
+      this.selectedCart[name1]=this.name;
+      this.selectedCart[price1]=this.price;
+      this.sender=stringify(this.selectedCart);
       console.log(this.selectedCart);
-      console.log(this.url);
   }
 
   Addtocart(){
-
+    this.cartService.postcart(this.selectedCart).subscribe((res)=>{
+      document.getElementById("dis").textContent="Added";
+    });
   }
 
 }

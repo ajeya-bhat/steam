@@ -17,6 +17,16 @@ export class CartComponent implements OnInit {
     this.getc();
   }
 
+  Buyer(){
+    if(confirm(" You can check out more games!!Buy now?")==true){
+      this.cartService.dcart().subscribe((res)=>{
+        this.getc();
+        document.getElementById("dis").textContent="Thank you for buying";
+      });
+
+    }
+  }
+
   getc(){
     this.cartService.getcart().subscribe((res)=>{
       this.cartService.carts=res as Cart[];

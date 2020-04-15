@@ -4,13 +4,15 @@ var ObjectId=require('mongoose').Types.ObjectId;
 var { Cart }=require("../models/cart");
 var { Contactus }=require("../models/contactus");
 var { Main } = require("../models/base.model");
-router.post('/carts',(req,res)=>{
+router.put('/carts',(req,res)=>{
     var c=new Cart({
         name: req.body.name,
         url:req.body.url,
         price:req.body.price
     });
     c.save((err,doc)=>{
+        console.log(doc);
+        console.log(c);
         if(!err) {res.send(doc);}
 
         else{console.log("ERR")}
@@ -49,6 +51,12 @@ router.delete('/carts/:id',(req,res)=>{
     Cart.findByIdAndRemove(req.params.id,(err,doc)=>{
         if(!err){res.send(doc);}
         else{console.log("NO DEL");}
+    });
+});
+router.delete('/carts',(req,res)=>{
+   
+    Cart.deleteMany({}, (err) => {
+        if(err){console.log("NO DEL");}
     });
 });
 router.get('/listall',(req,res)=>{

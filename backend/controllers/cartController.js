@@ -1,11 +1,11 @@
 const express =require('express');
+const nodemailer =require('nodemailer');
 var router= express.Router();
 var ObjectId=require('mongoose').Types.ObjectId;
 var { Cart }=require("../models/cart");
 var { Contactus }=require("../models/contactus");
 var { Detail } = require("../models/detail");
 router.put('/carts',(req,res)=>{
-    
     Cart.findOne({name:req.body.name},(err,doc)=>
     {
         if(err){console.log("ERR");}
@@ -28,7 +28,6 @@ router.put('/carts',(req,res)=>{
 });
 
 router.post('/detail',(req,res)=>{
-    
     Detail.findOne({name:req.body.name,email:req.body.email,games:req.body.games},(err,doc)=>
     {
         if(err){console.log("ERR");}
@@ -53,6 +52,8 @@ router.post('/detail',(req,res)=>{
 
 
 router.post('/contactus',(req,res)=>{
+    let co=req.body;
+    sendmail(co);
     var c=new Contactus({
         name: req.body.name,
         email:req.body.email,
@@ -65,7 +66,31 @@ router.post('/contactus',(req,res)=>{
     });
 });
 
+async function sendmail(user){
+    let transporter=nodemailer.createTransport({
+        host:"smtp.gmail.com",
+        port:587,
+        secure:false,
+        auth:{
+            user:'scoutaqua@gmail.com',
+            pass:'thisworks'
+        }
+    });
+    let mailopt={
+        from: '"MEE"',
+        to:user.email,
+        subject: "Hi",
+        html:`<h1>Hi ${user.name}</h1><br>
+        <h3>Thank you for your request</h3><br>
+        <h3>Your request was : " ${user.request} "</h3><br>
+        <h5>We are working towards a solution for your request.</h5><br>`
+    };
+    let info = await transporter.sendMail(mailopt);
+}
+
 router.post('/detail',(req,res)=>{
+    let co=req.body;
+    sendmail1(co);
     var c=new Contactus({
         name: req.body.name,
         email:req.body.email,
@@ -78,6 +103,32 @@ router.post('/detail',(req,res)=>{
         else{console.log("ERR")}
     });
 });
+
+
+async function sendmail1(user){
+    let transporter=nodemailer.createTransport({
+        host:"smtp.gmail.com",
+        port:587,
+        secure:false,
+        auth:{
+            user:'scoutaqua@gmail.com',
+            pass:'thisworks'
+        }
+    });
+    let mailopt={
+        from: '"MEE"',
+        to:user.email,
+        subject: "Hi",
+        html:`<h1>Hi ${user.name}</h1><br>
+        <h3>Thank you for buying at our store</h3><br>
+        <h3>The games you bought are : " ${user.games} "</h3><br>
+        <h4>Total cost: $ ${user.totalprice} </h4><br>
+        <h5>Your games will shortly be available on your steam account.</h5><br>
+        <h5>We request you to create one with the same email "${user.email}" provided to us, if you have not already.</h5>`
+    };
+    let info = await transporter.sendMail(mailopt);
+}
+
 
 router.get('/carts',(req,res)=>{
     Cart.find((err,doc)=>{

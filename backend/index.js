@@ -2,6 +2,7 @@ const express=require('express');
 const bodyParser=require('body-parser'); 
 const cors=require('cors');
 
+const nodemailer =require('nodemailer');
 const { mongoose }=require("./db.js");
 var cartController= require("./controllers/cartController");
 

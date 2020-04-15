@@ -3,20 +3,28 @@ var router= express.Router();
 var ObjectId=require('mongoose').Types.ObjectId;
 var { Cart }=require("../models/cart");
 var { Contactus }=require("../models/contactus");
-var { Main } = require("../models/base.model");
+var { Detail } = require("../models/detail");
 router.put('/carts',(req,res)=>{
-    var c=new Cart({
-        name: req.body.name,
-        url:req.body.url,
-        price:req.body.price
+    
+    Cart.findOne({name:req.body.name},(err,doc)=>
+    {
+        if(err){console.log("ERR");}
+        if(!doc){
+            var c=new Cart({
+                name: req.body.name,
+                url:req.body.url,
+                price:req.body.price
+            });
+            c.save((err,doc)=>{
+                console.log(doc);
+                console.log(c);
+                if(!err) {res.send(doc);}
+        
+                else{console.log("ERR")}
+            });
+        }
     });
-    c.save((err,doc)=>{
-        console.log(doc);
-        console.log(c);
-        if(!err) {res.send(doc);}
-
-        else{console.log("ERR")}
-    });
+    
 });
 
 router.post('/contactus',(req,res)=>{
@@ -24,6 +32,20 @@ router.post('/contactus',(req,res)=>{
         name: req.body.name,
         email:req.body.email,
         request:req.body.request
+    });
+    c.save((err,doc)=>{
+        if(!err) {res.send(doc);}
+
+        else{console.log("ERR")}
+    });
+});
+
+router.post('/detail',(req,res)=>{
+    var c=new Contactus({
+        name: req.body.name,
+        email:req.body.email,
+        games:req.body.games,
+        totalprice:req.body.totalprice
     });
     c.save((err,doc)=>{
         if(!err) {res.send(doc);}

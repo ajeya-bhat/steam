@@ -2,7 +2,7 @@
     <br><br>
     <h1 class="sss">Happy to help you !</h1>
     <br><br><br><br>
-    <form class="opera" (ngSubmit)="onSubmit()" >
+    <form id= "druid" class="opera" (ngSubmit)="onSubmit()" >
         <!--<input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="contactusService.selectedContact._id">
         -->
         <div class="form-group" >
@@ -21,9 +21,12 @@
         </div>
         
         <div class=" ">
-            <button class="button large  rounded success outline drop-shadow">Submit data</button>
+            <button class="button large  rounded success outline drop-shadow" >Submit data</button>
                
         </div>
     </form> 
-    <div id="dis"></div>
+    
+    <div >
+        <p id="dis" class=" cool w3-animate-opacity"></p>
+    </div>
 </div>

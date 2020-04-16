@@ -311,5 +311,8 @@ refresh(){
   console.log(this.uu2);
 }
 
+onallg(){
+  this.router.navigate(['/allgames']);
+}
 
 }

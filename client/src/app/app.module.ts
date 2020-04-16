@@ -16,6 +16,11 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { CartComponent } from './cart/cart.component';
 import { DescriptionComponent } from './description/description.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { Chart1Component } from './chart1/chart1.component';
+import { Chart2Component } from './chart2/chart2.component';
+import { Chart3Component } from './chart3/chart3.component';
+import { Chart4Component } from './chart4/chart4.component';
+import { Chart5Component } from './chart5/chart5.component';
 
 
 @NgModule({
@@ -27,7 +32,12 @@ import { StatisticsComponent } from './statistics/statistics.component';
     AllgamesComponent,
     CartComponent,
     DescriptionComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    Chart1Component,
+    Chart2Component,
+    Chart3Component,
+    Chart4Component,
+    Chart5Component
   ],
   imports: [
     BrowserModule,

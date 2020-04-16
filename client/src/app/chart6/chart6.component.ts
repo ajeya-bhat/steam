@@ -62,6 +62,7 @@ export class Chart6Component implements OnInit {
           }
     
   }
+}
   /* getData()
 {
     const resp = fetch("Game_Updated_Final.csv");
@@ -86,4 +87,4 @@ export class Chart6Component implements OnInit {
     ;
     });*/
     
-}
+

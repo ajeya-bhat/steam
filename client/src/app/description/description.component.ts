@@ -23,6 +23,7 @@ export class DescriptionComponent implements OnInit {
   public neg_rate;
   public background;
   public ans;
+  public owners;
   constructor(private route: ActivatedRoute, public cartService:CartService) { }
 
   ngOnInit(): void {
@@ -3047,6 +3048,8 @@ export class DescriptionComponent implements OnInit {
           let ans1 = e.toString();
           console.log(e);
           this.ans =e;
+          let owners1 =this.games[i].owners;
+          this.owners=owners1;
 
 
           
@@ -3064,7 +3067,7 @@ export class DescriptionComponent implements OnInit {
 
   Addtocart(){
     this.cartService.postcart(this.selectedCart).subscribe((res)=>{
-      document.getElementById("dis").textContent="Added";
+      document.getElementById("dis").textContent="Game Added to your cart";
     });
   }
 

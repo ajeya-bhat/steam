@@ -7,7 +7,7 @@
     border-radius: 20px;
 }
 .ss{
-    margin-left: 35%;
+    visibility: hidden;
     font-family: 'Trebuchet MS';
     color:white;
 }
@@ -18,5 +18,13 @@ margin-left: 25%;
 .sss{
     font-family: 'Trebuchet MS';
     color:white;
-    margin-left: 25%;
+    text-align: center;
+}
+.cool{
+    margin-top: 5%;
+    color: wheat;
+    font-family: "Moon 2.0";
+    font-size: 20px;
+    text-align: center;
+
 }

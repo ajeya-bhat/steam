@@ -11,7 +11,7 @@
     </div>
 </div>
 </div>
-<button id="load" (click)="onloadmore()">Load more</button>
+<button id="load" (click)="onloadmore()" class=" clo button rounded info outline drop-shadow">Load more</button><br><br><br><br>
 <div  *ngFor ="let game of games; let i = index" >
     <div *ngIf="i>40 && displayn" (click)="onSelect(game)" style="cursor:pointer" class="caru card rounded drop-shadow">
     <div class="card-header">

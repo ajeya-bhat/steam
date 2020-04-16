@@ -28,3 +28,28 @@
 .calsi{
     margin-left: 15%;
 }
+.portico{
+    text-align: center;
+    font-size: 30px;
+    color: wheat;
+    font-family: "Monotype Corsiva";
+   
+    margin-top: 5%;
+
+}
+.serd{
+    margin-left: 15%;
+    font-family: "Monotype Corsiva";
+    font-size: 35px;
+    text-decoration: underline;
+}
+.dfr{
+    float: left;
+    margin-left: 15%;
+    font-family: "Monotype Corsiva";
+    font-size: 25px;
+}
+.darf{
+    max-width: 70%;
+    margin-left: 15%;
+}

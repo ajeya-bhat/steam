@@ -22,7 +22,7 @@ export class ContactusComponent implements OnInit {
   onSubmit(){
     
     this.contactusService.postcontactus(this.selectedContact).subscribe((res)=>{
-      document.getElementById("dis").textContent="Submitted";
+      document.getElementById("dis").textContent="Your Request has been Recieved";
     });
   }
 

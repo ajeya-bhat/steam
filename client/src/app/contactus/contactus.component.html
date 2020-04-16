@@ -5,19 +5,19 @@
     <form id= "druid" class="opera" (ngSubmit)="onSubmit()" >
         <!--<input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="contactusService.selectedContact._id">
         -->
-        <div class="form-group" >
+        <div class="ark form-group" >
             <label  class="ss">Name</label>
-            <input type="text" id="fn" name="name"  [(ngModel)]="selectedContact.name" placeholder="Enter name"/>
+            <input class="ark" type="text" id="fn" name="name"  [(ngModel)]="selectedContact.name" placeholder="Enter name"/>
         </div>
-        <div class="form-group" >
+        <div class="ark form-group" >
             <label  class="ss">Email address</label>
-            <input type="text" id="fe" name="email"  [(ngModel)]="selectedContact.email" placeholder="Enter email"/>
+            <input class="ark" type="text" id="fe" name="email"  [(ngModel)]="selectedContact.email" placeholder="Enter email"/>
         
         </div>
-        <div class="form-group">
+        <div class=" form-group">
             <label class="ss">Request</label>
 
-            <textarea data-role="textarea" id="fr" data-auto-size="true" data-max-height="200" name="request" [(ngModel)]="selectedContact.request" placeholder="Enter request"></textarea>
+            <textarea class="ark" data-role="textarea" id="fr" data-auto-size="true" data-max-height="200" name="request" [(ngModel)]="selectedContact.request" placeholder="Enter request"></textarea>
         </div>
         
         <div class=" ">

@@ -1,0 +1,23 @@
+.groof{
+    width: 60%;
+    margin-left: 20%;
+    color: wheat;
+    background-color:rgba(0, 0, 0, 0.5);
+    margin-top: 2%;
+    height: 600px;
+}
+.frontal{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+
+}
+.awd{
+    text-align: center;
+    font-family: "harlow solid";
+    color: #E85AC7;
+    margin-top: 5%;
+}
+.ass{
+    text-align: center;
+}

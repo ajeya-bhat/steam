@@ -13,8 +13,8 @@ export class Chart1Component implements OnInit {
   title="dashboard";
   chart=[];
   public assArr = new Object();
-  xlabels=['a','b'];
-  yvalues=[1,2];
+  xlabels=["windows", "windows;mac", "windows;mac;linux", "windows;linux"];
+  yvalues=[179, 38, 48, 5] ;
   ngOnInit(): void {
 
     this.chart=new Chart('canvas',{
@@ -43,6 +43,30 @@ export class Chart1Component implements OnInit {
       });
     
   }
-  }
+/* getData()
+{
+    const resp = fetch("Game_Updated_Final.csv");
+    console.log(resp);
+    const data = resp;
+    const table = data.split('\n').slice(1);
+    table.forEach(row =>{const columns = row.split(',');
+    const platform = columns[7];
+
+        if(this.assArr[platform]>=1)
+        {
+            //console.log("here");
+            this.assArr[platform]+=1;
+        }
+ 
+        if(this.assArr[platform] == undefined)
+        {
+            this.assArr[platform]=1;
+        }
+        
+
+    ;
+    });*/
+    
+}
 
 

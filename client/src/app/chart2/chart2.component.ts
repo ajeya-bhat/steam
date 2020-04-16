@@ -13,8 +13,8 @@ export class Chart2Component implements OnInit {
   title="dashboard";
   chart=[];
   public assArr = new Object();
-  xlabels=['a','b'];
-  yvalues=[1,2];
+  xlabels=["2003", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"];
+  yvalues=[1, 1, 3, 1, 4, 4, 2, 3, 1, 5, 16, 26, 36, 61, 88, 19];
   ngOnInit(): void {
 
     this.chart=new Chart('canvas',{
@@ -76,5 +76,29 @@ export class Chart2Component implements OnInit {
         });
     
   }
+  /* getData()
+{
+    const resp = fetch("Game_Updated_Final.csv");
+    console.log(resp);
+    const data = resp;
+    const table = data.split('\n').slice(1);
+    table.forEach(row =>{const columns = row.split(',');
+    const platform = columns[7];
+
+        if(this.assArr[platform]>=1)
+        {
+            //console.log("here");
+            this.assArr[platform]+=1;
+        }
+ 
+        if(this.assArr[platform] == undefined)
+        {
+            this.assArr[platform]=1;
+        }
+        
+
+    ;
+    });*/
+    
 
 }

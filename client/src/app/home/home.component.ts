@@ -286,7 +286,7 @@ public uu2:Number=732150;
 public uu3:Number=46360;
 
   ngOnInit(): void {
-    setInterval(()=>this.refresh.call(this),30000);
+    setInterval(()=>this.refresh.call(this),15000);
   }
 
 onsel(v){

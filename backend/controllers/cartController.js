@@ -28,8 +28,8 @@ router.put('/carts',(req,res)=>{
 });
 
 
-router.put('/stats',(req,res)=>{
-    Cart.findOne({p1:req.body.p1,p2:req.body.p2},(err,doc)=>
+router.post('/stats',(req,res)=>{
+    Stat.findOne({p1:req.body.p1,p2:req.body.p2},(err,doc)=>
     {
         if(err){console.log("ERR");}
         if(!doc){
@@ -155,6 +155,13 @@ router.get('/contactus',(req,res)=>{
 
 router.get('/detail',(req,res)=>{
     Detail.find((err,doc)=>{
+        if(!err) {res.send(doc);}
+        else{console.log("ERR")}
+    });
+});
+
+router.get('/stats',(req,res)=>{
+    Stat.find((err,doc)=>{
         if(!err) {res.send(doc);}
         else{console.log("ERR")}
     });

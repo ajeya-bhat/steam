@@ -5,23 +5,23 @@
         <li class="nav-item">
             <button class="btn" Button label="chart1" 
             (click)="onchart1()">
-            Chart1</button>
+            # games per platform</button>
         </li>
         <li class="nav-item">
             <button class="btn" Button label="chart2" 
-            (click)="onchart2()">Chart2</button>
+            (click)="onchart2()"># games per year</button>
         </li>
         <li class="nav-item">
             <button class="btn" Button label="chart3" 
-            (click)="onchart3()">Chart3</button>
+            (click)="onchart3()">Release Date vs Price</button>
         </li>
         <li class="nav-item">
             <button class="btn" Button label="chart4" 
-            (click)="onchart4()">Chart4</button>
+            (click)="onchart4()">#games per platform</button>
         </li>
         <li class="nav-item">
             <button class="btn" Button label="chart5" 
-            (click)="onchart5()">Chart5</button>
+            (click)="onchart5()">Developer vs Price</button>
         </li>
     </ul>
 </nav>
@@ -31,6 +31,3 @@
 <app-chart3 *ngIf="chart3"></app-chart3>
 <app-chart4 *ngIf="chart4"></app-chart4>
 <app-chart5 *ngIf="chart5"></app-chart5>
-<div style="width:20%">
-<canvas id ="canvas"></canvas>
-</div>

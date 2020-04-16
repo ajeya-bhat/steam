@@ -22,6 +22,9 @@ export class ContactusComponent implements OnInit {
   onSubmit(){
     
     this.contactusService.postcontactus(this.selectedContact).subscribe((res)=>{
+      (<HTMLInputElement>document.getElementById("fn")).value="";
+      (<HTMLInputElement>document.getElementById("fr")).value="";
+      (<HTMLInputElement>document.getElementById("fe")).value="";
       document.getElementById("dis").textContent="Your Request has been Recieved";
     });
   }

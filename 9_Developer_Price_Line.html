@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HELLO</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js">
+	</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<body>
+	<canvas id ="myChart" width="100" height="100"></canvas>
+	<script>
+        var xlabels = [];
+        var yvalues=[];
+        var arr = [];
+        chartIt();
+        async function chartIt()
+        {
+            await getData();
+            arr.sort();
+            console.log(arr);
+            for (var i=0; i<arr.length; i++)
+            {
+                xlabels.push(arr[i].split('=')[0]);
+                yvalues.push(arr[i].split('=')[1]);
+            }
+        xlabels = xlabels.filter(function(x) {return x != "undefined";});
+        //console.log(xlabels, yvalues);
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+        labels: xlabels,
+        datasets: [{
+            label: 'Price in $',
+            borderColor: 'rgb(255, 99, 132)',
+            data: yvalues
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+    }
+});
+       
+        }
+
+//getData();
+async function getData()
+{
+    const resp = await fetch("Game_Updated_Final.csv")
+    const data = await resp.text();
+    const table = data.split('\n').slice(1);
+    table.forEach(row =>{const columns = row.split(',');
+    if(columns[3]!=undefined)
+        {
+            const publisher = columns[5];
+
+            const price =columns[18];
+            const concat_str = publisher.concat('=', price);
+            arr.push(concat_str);
+
+            
+        }
+
+    ;
+    }
+    );
+    
+
+}
+</script>
+	
+
+</body>
+</html>

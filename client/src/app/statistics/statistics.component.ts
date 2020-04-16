@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
+import { CartService } from './../shared/cart.service';
 
 @Component({
   selector: 'app-statistics',
@@ -8,12 +9,15 @@ import {Chart} from 'chart.js';
 })
 export class StatisticsComponent implements OnInit {
 
-  constructor() { }
+  public p1:String;
+  public p2:String;
+  constructor(public cartService:CartService) { }
   chart1:boolean=true;
   chart2:boolean=false;
   chart3:boolean=false;
   chart4:boolean=false;
   chart5:boolean=false;
+  public selectedStat :any={};
 
   
   onchart1(){
@@ -31,12 +35,17 @@ export class StatisticsComponent implements OnInit {
   onchart5(){
     this.chart5=true;this.chart1=false;this.chart3=false;this.chart4=false;this.chart2=false;
   }
-
-
-  
   ngOnInit(): void {
-    
-
-
-
-}}
+}
+  req(){
+    console.log(this.p1);
+    console.log(this.p2);
+    var pp1 = "p1";
+    var pp2 = "p2";
+    this.selectedStat[pp1]=this.p1;
+    this.selectedStat[pp2]=this.p2;
+    this.cartService.poststat(this.selectedStat).subscribe((res)=>{
+      console.log(res);
+    });
+  }
+}

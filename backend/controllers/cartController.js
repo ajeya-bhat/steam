@@ -5,6 +5,7 @@ var ObjectId=require('mongoose').Types.ObjectId;
 var { Cart }=require("../models/cart");
 var { Contactus }=require("../models/contactus");
 var { Detail } = require("../models/detail");
+var { Stat } = require("../models/stat");
 router.put('/carts',(req,res)=>{
     Cart.findOne({name:req.body.name},(err,doc)=>
     {
@@ -15,6 +16,28 @@ router.put('/carts',(req,res)=>{
                 name: req.body.name,
                 url:req.body.url,
                 price:req.body.price
+            });
+            c.save((err,doc)=>{
+                if(!err) {res.send(doc);}
+        
+                else{console.log("ERR")}
+            });
+        }
+    });
+    
+});
+
+
+router.put('/stats',(req,res)=>{
+    Cart.findOne({p1:req.body.p1,p2:req.body.p2},(err,doc)=>
+    {
+        if(err){console.log("ERR");}
+        if(!doc){
+            
+            var c=new Stat({
+                p1: req.body.p1,
+                p2:req.body.p2
+                
             });
             c.save((err,doc)=>{
                 if(!err) {res.send(doc);}

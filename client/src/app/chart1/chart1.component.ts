@@ -39,7 +39,22 @@ export class Chart1Component implements OnInit {
                   borderWidth: 1
               }]
           },
-          
+          options: {
+            scales: {
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'games'
+                }
+              }],
+              xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'platform/s'
+                }
+              }]
+            } 
+          }
       });
     
   }

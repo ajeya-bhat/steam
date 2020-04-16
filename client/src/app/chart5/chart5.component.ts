@@ -32,6 +32,20 @@ export class Chart5Component implements OnInit {
 
     // Configuration options go here
     options: {
+      scales: {
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'price'
+          }
+        }],
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'developer'
+          }
+        }]
+      } 
     }
 });
     

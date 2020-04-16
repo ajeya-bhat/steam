@@ -1,1 +1,36 @@
-<p>statistics works!</p>
+<h1>Statistics of games</h1>
+
+<nav class="navbar navbar-expand-sm bg-light navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <button class="btn" Button label="chart1" 
+            (click)="onchart1()">
+            Chart1</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn" Button label="chart2" 
+            (click)="onchart2()">Chart2</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn" Button label="chart3" 
+            (click)="onchart3()">Chart3</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn" Button label="chart4" 
+            (click)="onchart4()">Chart4</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn" Button label="chart5" 
+            (click)="onchart5()">Chart5</button>
+        </li>
+    </ul>
+</nav>
+
+<app-chart1 *ngIf="chart1"></app-chart1>
+<app-chart2 *ngIf="chart2"></app-chart2>
+<app-chart3 *ngIf="chart3"></app-chart3>
+<app-chart4 *ngIf="chart4"></app-chart4>
+<app-chart5 *ngIf="chart5"></app-chart5>
+<div style="width:20%">
+<canvas id ="canvas"></canvas>
+</div>

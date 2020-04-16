@@ -12,8 +12,8 @@ export class Chart4Component implements OnInit {
   title="dashboard";
   chart=[];
   public assArr = new Object();
-  xlabels=["windows", "windows;mac", "windows;mac;linux", "windows;linux"];
-  yvalues=[179, 38, 48, 5];
+  xlabels=["windows","mac","linux"];
+  yvalues=[270,86,53];
   ngOnInit(): void {
 
     this.chart=new Chart('canvas',{
@@ -39,6 +39,7 @@ export class Chart4Component implements OnInit {
                 }]
             },
             options: {
+           
             }
         });
   }

@@ -28,7 +28,26 @@ export class Chart3Component implements OnInit {
       }]
   },
 
-  options: {
+    options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'price'
+              }
+          }],
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'release date'
+            }
+          }]
+        
+      }
+  
   }
 });
     

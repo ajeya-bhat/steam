@@ -69,10 +69,22 @@ export class Chart2Component implements OnInit {
                     yAxes: [{
                         ticks: {
                             beginAtZero: true
+                        },
+                        scaleLabel: {
+                          display: true,
+                          labelString: 'games'
                         }
+                    }],
+                    xAxes: [{
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'year'
+                      }
                     }]
+                  
                 }
             }
+             
         });
     
   }

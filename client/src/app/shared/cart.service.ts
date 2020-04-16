@@ -13,6 +13,7 @@ export class CartService {
   details : Detail[];
   readonly baseUrl = "http://localhost:3000/cart/carts/";
   readonly baseUrl1 = "http://localhost:3000/cart/detail/";
+  readonly baseUrl2 = "http://localhost:3000/cart/stat/";
   constructor(private http:HttpClient) { }
 
   postcart(cont : any){
@@ -31,5 +32,9 @@ export class CartService {
 
   postdetail(cont:any){
     return this.http.post(this.baseUrl1,cont);
+  }
+
+  poststat(cont:any){
+    return this.http.post(this.baseUrl2,cont);
   }
 }

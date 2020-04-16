@@ -60,7 +60,7 @@ export class Chart6Component implements OnInit {
               }]
             } 
           }
-    
+        });
   }
   /* getData()
 {
@@ -87,3 +87,4 @@ export class Chart6Component implements OnInit {
     });*/
     
 }
+

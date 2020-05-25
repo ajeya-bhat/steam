@@ -1,4 +1,6 @@
-# steam
+# The mini-project deals with creating a miniature version of a video-game catalogue and e-commerce website. Data from the steam dataset is used. Statistical analysis is also done on the games in the website using npm library utilities.
+
+## Technologies used - MEAN Stack, Python
 
 ### client folder has all the Angular (frontend) files.
 

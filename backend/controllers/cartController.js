@@ -8,6 +8,7 @@ var { Detail } = require("../models/detail");
 var { Stat } = require("../models/stat");
 
 router.put('/carts',(req,res)=>{
+	
     Cart.findOne({name:req.body.name},(err,doc)=>
     {
         if(err){console.log("ERR");}
@@ -24,17 +25,19 @@ router.put('/carts',(req,res)=>{
                 else{console.log("ERR")}
             });
         }
+
     });
     
 });
 
 
 router.post('/stats',(req,res)=>{
+	var flag=0;
     Stat.findOne({p1:req.body.p1,p2:req.body.p2},(err,doc)=>
     {
         if(err){console.log("ERR");}
         if(!doc){
-            
+            flag=1;
             var c=new Stat({
                 p1: req.body.p1,
                 p2:req.body.p2
@@ -45,6 +48,9 @@ router.post('/stats',(req,res)=>{
         
                 else{console.log("ERR")}
             });
+        }
+        else{
+        	res.send(["Entry already there"]);
         }
     });
     

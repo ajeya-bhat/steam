@@ -8,9 +8,11 @@ import { CartService } from './../shared/cart.service';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-
   
-  constructor(public cartService:CartService) { }
+  
+  constructor(public cartService:CartService) {
+    
+   }
   chart1:boolean=true;
   chart2:boolean=false;
   chart3:boolean=false;

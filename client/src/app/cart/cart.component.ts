@@ -42,6 +42,12 @@ export class CartComponent implements OnInit {
     console.log(this.tp);
     console.log(this.un);
     console.log(this.em);
+    console.log("HERE"+typeof(this.un));
+    if(typeof(this.un)==="undefined" || typeof(this.em)==="undefined"){
+      alert("Fields cannot be empty!");
+      return;
+    }
+    console.log("HERE1");
     var email1 = "email";
     var games1 = "games";
       var name1 = "name";
@@ -55,7 +61,9 @@ export class CartComponent implements OnInit {
         console.log(res);
       });
       this.cartService.dcart().subscribe((res)=>{
+        console.log(res);
         this.getc();
+        
         document.getElementById("dis").textContent="Thank you for buying";
       });
 

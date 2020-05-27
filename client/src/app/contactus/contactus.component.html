@@ -7,17 +7,17 @@
         -->
         <div class="ark form-group" >
             <label  class="ss">Name</label>
-            <input class="ark" type="text" id="fn" name="name"  [(ngModel)]="selectedContact.name" placeholder="Enter name"/>
+            <input class="ark" type="text" id="fn" name="name"  [(ngModel)]="name" placeholder="Enter name" required>
         </div>
         <div class="ark form-group" >
             <label  class="ss">Email address</label>
-            <input class="ark" type="text" id="fe" name="email"  [(ngModel)]="selectedContact.email" placeholder="Enter email"/>
+            <input class="ark" type="text" id="fe" name="email"  [(ngModel)]="email" placeholder="Enter email" required>
         
         </div>
         <div class=" form-group">
             <label class="ss">Request</label>
 
-            <textarea class="ark" data-role="textarea" id="fr" data-auto-size="true" data-max-height="200" name="request" [(ngModel)]="selectedContact.request" placeholder="Enter request"></textarea>
+            <textarea class="ark" data-role="textarea" id="fr" data-auto-size="true" data-max-height="200" name="request" [(ngModel)]="request" placeholder="Enter request" required></textarea>
         </div>
         
         <div class=" ">

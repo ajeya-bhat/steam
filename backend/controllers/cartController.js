@@ -25,7 +25,9 @@ router.put('/carts',(req,res)=>{
                 else{console.log("ERR")}
             });
         }
-
+		else{
+        	res.send(["Game already there in cart"]);
+        }
     });
     
 });
@@ -75,6 +77,10 @@ router.post('/detail',(req,res)=>{
         
                 else{console.log("ERR")}
             });
+            
+        }
+        else{
+        	res.send(["You have already bought these games"]);
         }
     });
     
@@ -82,21 +88,37 @@ router.post('/detail',(req,res)=>{
 
 
 router.post('/contactus',(req,res)=>{
-    let co=req.body;
-    sendmail(co);
-    var c=new Contactus({
-        name: req.body.name,
-        email:req.body.email,
-        request:req.body.request
-    });
-    c.save((err,doc)=>{
-        if(!err) {res.send(doc);}
+    Contactus.findOne({name:req.body.name,email:req.body.email,request:req.body.request},(err,doc)=>
+    {
+    	console.log(req.body);
+    	console.log("DOC"+doc);
+    	if(err){console.log("ERR");}
+        if(!doc){
+        	console.log("H");
+        	let co=req.body;
+    		sendmail(co);
+        	var c=new Contactus({
+				name: req.body.name,
+				email:req.body.email,
+				request:req.body.request
+			});
+			c.save((err,doc)=>{
+		    if(!err) {res.send(doc);}
 
-        else{console.log("ERR")}
+		    else{console.log("ERR")}
+    		});
+        }
+        else{
+        	res.send(["Entry already there"]);
+        }
+    
     });
+    
+    
 });
 
 async function sendmail(user){
+	console.log("HERE");
     let transporter=nodemailer.createTransport({
         host:"smtp.gmail.com",
         port:587,

@@ -13,7 +13,6 @@ export class ContactusService {
   constructor(private http:HttpClient) { }
 
   postcontactus(cont : any){
-    console.log(cont);
     return this.http.post(this.baseUrl,cont);
   }
 }

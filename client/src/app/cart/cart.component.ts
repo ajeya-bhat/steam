@@ -61,7 +61,9 @@ export class CartComponent implements OnInit {
         console.log(res);
       });
       this.cartService.dcart().subscribe((res)=>{
+        console.log(res);
         this.getc();
+        
         document.getElementById("dis").textContent="Thank you for buying";
       });
 

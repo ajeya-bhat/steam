@@ -7,7 +7,7 @@ import time
 from random import randint
 
 #invoking chromedriver
-chromedriver = "/home/ajeya/steam/testing/chromedriver"
+chromedriver = "./chromedriver"
 driver = webdriver.Chrome(chromedriver)
 
 actions = ActionChains(driver)

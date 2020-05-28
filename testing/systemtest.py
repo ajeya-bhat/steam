@@ -21,7 +21,7 @@ def test1():
 	driver.find_element_by_id("img1").click()
 	time.sleep(2)
 	driver.execute_script("window.history.go(-1)")
-	time.sleep(4)
+	time.sleep(6)
 	print("Test 1 passed succesfully")
 	
 #Test2 - Checking if next and previous toggle buttons work, and all the images in the slideshow work properly.
@@ -31,17 +31,17 @@ def test2():
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 	time.sleep(2)
 	driver.find_element_by_id("prev").click()
-	time.sleep(1)
+	time.sleep(2)
 	driver.find_element_by_id("next").click()
-	time.sleep(1)
+	time.sleep(2)
 	driver.find_element_by_id("img1").click()
 	time.sleep(2)
 	driver.execute_script("window.history.go(-1)")
 	time.sleep(2)
 	driver.find_element_by_id("next").click()
-	time.sleep(1)
+	time.sleep(2)
 	driver.find_element_by_id("img2").click()
-	time.sleep(4)
+	time.sleep(6)
 	print("Test 2 passed succesfully")
 
 #Test3 - Checking if all game catalog button works
@@ -52,7 +52,7 @@ def test3():
 	time.sleep(2)
 	l=driver.find_elements_by_xpath("//*[contains(text(), 'all games')]")
 	l[0].click()
-	time.sleep(4)
+	time.sleep(6)
 	print("Test 3 passed succesfully")
 
 #Test4 - Checking if sidebar functionality works
@@ -67,7 +67,7 @@ def test4():
 	l[r].click()
 	time.sleep(2)
 	driver.execute_script("window.history.go(-1)")
-	time.sleep(4)
+	time.sleep(6)
 	print("Test 4 passed succesfully")
 
 
@@ -75,18 +75,7 @@ def test4():
 def test5():
 	driver.get("http://localhost:4200/")
 	driver.maximize_window()
-	#driver.execute_script("document.body.style.zoom='90%'")
-	#driver.execute_script("document.body.style.zoom='75%'")
-	#win = driver.find_element_by_tag_name("html")
-	#win.send_keys(Keys.CONTROL,Keys.ADD)
-	#win.send_keys(Keys.CONTROL + "-")
 	time.sleep(2)
-	#driver.find_element_by_tag_name("html").send_keys(Keys.CONTROL + '+')
-	driver.find_element_by_tag_name("body").send_keys(Keys.CONTROL,Keys.SUBTRACT)
-	#driver.find_element_by_tag_name("html").send_keys(Keys.CONTROL + '+')
-	#driver.execute_script('document.body.style.MozTransform = "scale(0.5)";')
-	#driver.execute_script('document.body.style.MozTransformOrigin = "0 0";')
-	#driver.manage().window().setSize(new Dimension(1500, 1000))
 	time.sleep(2)
 	driver.find_element_by_id("sidebar-toggle-2").click()
 	time.sleep(2)
@@ -96,7 +85,7 @@ def test5():
 	time.sleep(2)
 	l1=driver.find_elements_by_xpath("//*[contains(text(), 'AQUA')]")
 	l1[0].click()
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 5 passed succesfully")
 
 #Test6 - Checking if multistage download section works, that is, checking if all games are loaded when load more button is clicked
@@ -115,7 +104,7 @@ def test6():
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight/2)")
 	time.sleep(2)
 	driver.execute_script("window.scrollTo(document.body.scrollHeight/2,document.body.scrollHeight)")
-	time.sleep(4)
+	time.sleep(6)
 	print("Test 6 passed succesfully")
 
 #Test7 - Checking if a game gets added to the cart
@@ -136,7 +125,7 @@ def test7():
 	time.sleep(2)
 	l=driver.find_elements_by_tag_name("li")
 	l[2].click()
-	time.sleep(4)
+	time.sleep(6)
 	print("Test 7 passed succesfully")
 
 #Test8 - Checking if a game gets deleted from a cart
@@ -158,7 +147,7 @@ def test8():
 	time.sleep(2)
 	obj = driver.switch_to.alert
 	obj.accept()
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 8 passed succesfully")
 
 
@@ -204,7 +193,7 @@ def test9():
 	time.sleep(2)
 	obj = driver.switch_to.alert
 	obj.accept()
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 9 passed succesfully")
 
 #Test10 - Checking what happens when one of the fields is not mentioned before checkout
@@ -238,14 +227,14 @@ def test10():
 	time.sleep(2)
 	driver.find_element_by_id("un").send_keys("Ajeya")
 	time.sleep(2)
+	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+	time.sleep(2)
 	l4=driver.find_elements_by_xpath("//*[contains(text(), 'Checkout')]")
-	m=l4[0]
-	actions.click(m)
-	actions.perform()
+	l4[0].click()
 	time.sleep(2)
 	obj = driver.switch_to.alert
 	obj.accept()
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 10 passed succesfully")
 
 #Test11 - Checking if contactus form works
@@ -268,10 +257,8 @@ def test11():
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 	time.sleep(2)
 	l4=driver.find_elements_by_xpath("//*[contains(text(), 'Submit')]")
-	m=l4[0]
-	actions.click(m)
-	actions.perform()
-	time.sleep(2)
+	l4[0].click()
+	time.sleep(6)
 	print("Test 11 passed successfully")
 
 #Test12 - Checking what happens if contactus form is not filled completely
@@ -292,13 +279,11 @@ def test12():
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 	time.sleep(2)
 	l4=driver.find_elements_by_xpath("//*[contains(text(), 'Submit')]")
-	m=l4[0]
-	actions.click(m)
-	actions.perform()
+	l4[0].click()
 	time.sleep(2)
 	obj = driver.switch_to.alert
 	obj.accept()
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 12 passed successfully")
 
 
@@ -334,7 +319,7 @@ def test13():
 	driver.find_element_by_xpath("//*[contains(text(), 'per genre')]").click()
 	time.sleep(2)
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 13 passed successfully")
 
 #Test14 - Checking what happens when request for a new graph is asked
@@ -348,9 +333,7 @@ def test14():
 	l=driver.find_elements_by_tag_name("li")
 	l[4].click()
 	time.sleep(2)	
-	a=driver.find_element_by_xpath("//*[contains(text(), 'Request')]")
-	actions.click(a)
-	actions.perform()
+	driver.find_element_by_xpath("//*[contains(text(), 'Request')]").click()
 	time.sleep(2)
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 	time.sleep(2)
@@ -365,7 +348,7 @@ def test14():
 	driver.find_element_by_id("p2").send_keys("Achievements")
 	time.sleep(2)
 	driver.find_element_by_id("req").click()
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 14 passed successfully")
 
 #Test15 - Checking what happens when request for a new graph is incompletely filled
@@ -395,7 +378,7 @@ def test15():
 	driver.find_element_by_id("req").click()
 	time.sleep(2)
 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-	time.sleep(2)
+	time.sleep(6)
 	print("Test 15 passed successfully")
 
 #test1()
@@ -408,8 +391,8 @@ def test15():
 #test8()
 #test9()
 #test10()
-#test11()
-#test12()
-#test13()
-#test14()
+test11()
+test12()
+test13()
+test14()
 test15()

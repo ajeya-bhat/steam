@@ -118,7 +118,7 @@ router.post('/contactus',(req,res)=>{
 });
 
 async function sendmail(user){
-	console.log("HERE");
+	console.log("HERE FEEDBACK");
     let transporter=nodemailer.createTransport({
         host:"smtp.gmail.com",
         port:587,
@@ -144,6 +144,7 @@ async function sendmail(user){
 
 
 async function sendmail1(user){
+	console.log("HERE CHECKOUT");
     let transporter=nodemailer.createTransport({
         host:"smtp.gmail.com",
         port:587,

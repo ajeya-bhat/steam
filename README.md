@@ -10,3 +10,5 @@
   - `intelli` folder: Contains the scraping code.
   - `testing` folder: Contains testing load testing, automation testing, and unit testing files.
   - `steam-store-games` folder: Contains the dataset used.
+
+The link to the video can be found [here](https://www.loom.com/share/d87cfcf9891e492784afafa69239d15b?sid=316c19d8-fffa-4549-a0ef-4656c37ef12a).
